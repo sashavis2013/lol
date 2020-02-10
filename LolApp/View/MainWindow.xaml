@@ -1,0 +1,123 @@
+﻿<Window 
+        x:Class="LolApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LolApp"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="LoL" Height="600" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="#FF29166F" Icon="/LolApp;component/Assets/43343.png">
+    <Grid>
+        <StackPanel    VerticalAlignment="Top" HorizontalAlignment="Left" >
+            <Button x:Name = "cmdMinimize" Click="cmdMinimize_Click" Content="_" Height="30" VerticalAlignment="Top">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="Bd" Background="Transparent">
+                            <Path x:Name="Pt" 
+                      Stretch="Uniform" Stroke="#FFCAB4FC" StrokeThickness="2">
+                                <Path.Data >
+                                    <LineGeometry StartPoint = "100, 30" EndPoint = "200,130" >
+                                        <LineGeometry.Transform>
+                                            <TransformGroup >
+                                                <ScaleTransform/>
+                                                <SkewTransform/>
+                                                <RotateTransform Angle = "-45"/>
+                                                <TranslateTransform/>
+                                            </TransformGroup>
+                                        </LineGeometry.Transform>
+                                    </LineGeometry>
+                                </Path.Data>
+                            </Path >
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <EventTrigger RoutedEvent="MouseEnter" >
+                                <BeginStoryboard Name="enter">
+                                    <Storyboard>
+                                        <ColorAnimation To="DarkBlue"
+                                                        Storyboard.TargetName="Pt"
+                                                        Storyboard.TargetProperty="Stroke.Color"
+                                                        FillBehavior="HoldEnd"
+                                                        Duration="0:0:0.5"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="MouseLeave" >
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation To="#FFCAB4FC"
+                                                        Storyboard.TargetName="Pt"
+                                                        Storyboard.TargetProperty="Stroke.Color"
+                                                        FillBehavior="HoldEnd"
+                                                        Duration="0:0:0.5"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+        </StackPanel>
+        <StackPanel>
+            <Button x:Name="exitBtn" Content="" Height="30"  HorizontalAlignment="Right" VerticalAlignment="Top" Click="exitBtn_Click" >
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="Bd" Background="Transparent">
+                            <Path x:Name="Pt" Data="M0,0 M0.2,0.2 L 0.8,0.8 M0.2,0.8 L0.8,0.2 M1,1"
+                      Stretch="Uniform" Stroke="#FFCAB4FC" StrokeThickness="2"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <EventTrigger RoutedEvent="MouseEnter" >
+                                <BeginStoryboard Name="enter">
+                                    <Storyboard>
+                                        <ColorAnimation To="DarkBlue"
+                                                        Storyboard.TargetName="Pt"
+                                                        Storyboard.TargetProperty="Stroke.Color"
+                                                        FillBehavior="HoldEnd"
+                                                        Duration="0:0:0.5"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="MouseLeave" >
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation To="#FFCAB4FC"
+                                                        Storyboard.TargetName="Pt"
+                                                        Storyboard.TargetProperty="Stroke.Color"
+                                                        FillBehavior="HoldEnd"
+                                                        Duration="0:0:0.5"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </StackPanel>
+        <StackPanel Margin="25">
+            <Image Source="/Assets/logo.png" Width="250" />
+            <Border Background="#FFCAB4FC" Margin="10" CornerRadius="10">
+                <StackPanel Margin="20">
+                    <ComboBox Margin="10" Style="{StaticResource MaterialDesignFloatingHintComboBox}" materialDesign:HintAssist.Hint="Region" Text="{Binding Region}">
+                        <ComboBoxItem Content="RU"/>
+                        <ComboBoxItem Content="KR"/>
+                        <ComboBoxItem Content="BR1"/>
+                        <ComboBoxItem Content="OC1"/>
+                        <ComboBoxItem Content="JP1"/>
+                        <ComboBoxItem Content="NA1"/>
+                        <ComboBoxItem Content="EUN1"/>
+                        <ComboBoxItem Content="EUW1"/>
+                        <ComboBoxItem Content="TR1"/>
+                        <ComboBoxItem Content="LA1"/>
+                        <ComboBoxItem Content="LA2"/>
+                    </ComboBox>
+                    <TextBox  Margin="5" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Summoner" Text="{Binding SummonerName}"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button x:Name="SignUp" Margin="15" Content="Search" Click="ButtonSignUp_Click"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </Grid>
+</Window>
