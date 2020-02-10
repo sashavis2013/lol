@@ -28,7 +28,7 @@ namespace LolApp.View.ViewModel
         public string SummonerName
         {
             get { return summonerName; }
-            set { summonerName = value; NotifyPropertyChanged("SummonerName"); }
+            set { summonerName = value;  NotifyPropertyChanged("SummonerName"); }
         }
 
     }
