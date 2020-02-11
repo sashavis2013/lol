@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using LolApp.Utils;
 
 namespace LolApp
 {
@@ -32,29 +33,43 @@ namespace LolApp
             InitializeComponent();
             this.DataContext = viewModel;
         }
+
+        void EnterClicked(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Return)
+            {
+
+                
+
+
+                e.Handled = true;
+            }
+        }
+
         private void ButtonSignUp_Click(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrEmpty(viewModel.Region))
                 return;
             if (string.IsNullOrEmpty(viewModel.SummonerName))
                 return;
+            Constants summoner = new Constants(viewModel.SummonerName, viewModel.Region);
+            if (viewModel.SummonerName!=null)
+            {
 
-            //if (controller.getSummoner(viewModel.SummonerName))
-            //{
-                WindowProfile profile = new WindowProfile();
-                profile.Show();
-                this.Close();
-        //}
-        //    else
-        //    {
-        //        MessageBox.Show("Not Found");
-        //    }
-
-
-
+                WindowProfile profile = new WindowProfile(summoner);
+            profile.Show();
+            this.Close();
+        }
+                else
+                {
+                    MessageBox.Show("Not Found");
+                }
 
 
-            
+
+
+
+
 
 
 

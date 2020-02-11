@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using LolApp.Utils;
 
 namespace LolApp.View
 {
@@ -21,14 +22,26 @@ namespace LolApp.View
     public partial class WindowProfile : Window
     {
         ControllerProfile controller;
-        public WindowProfile()
+        public WindowProfile(Constants summoner)
         {
             controller = new ControllerProfile();
             InitializeComponent();
-            this.DataContext = controller.GetContext();
+            this.DataContext = controller.GetContext(summoner);
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+       
+
+        private void cmdMinimize_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
+
+        private void exitBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Button_Click1(object sender, RoutedEventArgs e)
         {
             controller.OpenMain();
             this.Close();

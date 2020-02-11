@@ -14,17 +14,21 @@ namespace LolApp.View.ViewModel
         public string Tier { get; private set; }
         public string Rank { get; private set; }
         public string Emblem { get; private set; }
-        public int Winratio { get; private set; }
-
-        public ViewModelProfile(string summonerName, int icon, long level, string tier, string rank, int winratio)
+        public int Wins { get; private set; }
+        public int Losses { get; private set; }
+        public int LeaguePoints { get; private set; }
+        public ViewModelProfile(string summonerName, int icon, long level, string tier, string rank, int wins, int losses, int leaguePoints)
         {
             SummonerName = summonerName;
             Icon = "http://opgg-static.akamaized.net/images/profile_icons/profileIcon" + icon + ".jpg";
             Level = level;
             Tier = tier;
             Rank = rank;
-            Winratio = winratio;
-            Emblem = "/LoLGoal;component/Assets/emblems/" + tier + ".png";
+            Wins = wins;
+            Losses = losses;
+            
+            LeaguePoints = leaguePoints;
+            Emblem = "/LoLApp;component/Assets/" + tier + ".png";
         }
     }
 }

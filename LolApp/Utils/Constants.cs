@@ -7,9 +7,56 @@ using System.Threading.Tasks;
 
 namespace LolApp.Utils
 {
-    public static class Constants
-    {
-        public static SummonerDTO Summoner { get; set; }
-        public static string Region { get; set; }
+     public class Constants
+     {
+        public static string summonerName;
+        public static string region;
+        public static SummonerDTO SummonerDTO;
+
+        public static string Summoner
+        {
+            get
+            {
+                return summonerName;
+            }
+            private set
+            {
+                Summoner = value;
+            }
+        }
+        public static string Region
+        {
+            get
+            {
+                return region;
+            }
+            private set
+            {
+                region = value;
+            }
+        }
+        public static SummonerDTO summonerDTO 
+        { 
+            get 
+            { 
+                return SummonerDTO;
+            }
+            private set
+            {
+                SummonerDTO = summonerDTO;
+            }
+        } 
+        public Constants(string Name, string Region)
+        {
+            summonerName = Name;
+            region = Region;
+        }
+
+        public void SetDTO(SummonerDTO summonerDTO)
+        {
+            SummonerDTO = summonerDTO;
+            return;
+        }
+
     }
 }

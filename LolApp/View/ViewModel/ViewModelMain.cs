@@ -21,14 +21,14 @@ namespace LolApp.View.ViewModel
         public string Region
         {
             get { return region; }
-            set { region = value; Constants.Region = value; NotifyPropertyChanged("Region"); }
+            set { region = value; NotifyPropertyChanged("Region"); }
         }
 
         string summonerName;
         public string SummonerName
         {
             get { return summonerName; }
-            set { summonerName = value;  NotifyPropertyChanged("SummonerName"); }
+            set { summonerName = value; NotifyPropertyChanged("SummonerName"); }
         }
 
     }

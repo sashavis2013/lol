@@ -161,6 +161,21 @@
   <ItemGroup>
     <Resource Include="View\43343.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\535.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\lol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\2.png" />
+    <Resource Include="Assets\535.jpg" />
+    <Resource Include="Assets\lol.png" />
+    <Resource Include="Assets\lol2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\434.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.3.0.1\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.3.0.1\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

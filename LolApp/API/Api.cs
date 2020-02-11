@@ -28,13 +28,13 @@ namespace LolApp.API
                 var result = client.GetAsync(URL);
                 result.Wait();
 
-                return result.Result;
+                    return result.Result;
             }
         }
 
         protected string getURI(string path)
         {
-            return "https://" + Region + ".api.riotgames.com/lol" + path + "?api_key=" + Key;
+            return "https://" + Region + ".api.riotgames.com/lol/" + path + "?api_key=" + Key;
         }
 
         public string getKey(string path)

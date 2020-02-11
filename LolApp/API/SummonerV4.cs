@@ -18,8 +18,8 @@ namespace LolApp.API
         public SummonerDTO getSummonerByName(string summonerName)
         {
             string path = "summoner/v4/summoners/by-name/" + summonerName;
-
-            var response = get(getURI(path));
+            string pt = getURI(path);
+            var response = get(pt);
             string content = response.Content.ReadAsStringAsync().Result;
 
             if (response.StatusCode == System.Net.HttpStatusCode.OK)

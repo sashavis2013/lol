@@ -12,17 +12,19 @@ namespace LolApp.Controller
 {
     public class ControllerProfile
     {
-        public object GetContext()
+        public object GetContext(Constants summoner)
         {
-            var summoner = Constants.Summoner;
-            var position = getPosition(summoner);
+            ControllerMain cont = new ControllerMain();
+            cont.getSummoner(summoner);
+            var position = getPosition(Constants.summonerDTO);
 
-            return new ViewModelProfile(summoner.Name, summoner.ProfileIconId, summoner.SummonerLevel, position.Tier, position.Rank,
-                position.Winratio);
+            return new ViewModelProfile(Constants.summonerDTO.Name, Constants.summonerDTO.ProfileIconId, Constants.summonerDTO.SummonerLevel, position.Tier, position.Rank,
+                position.Wins, position.Losses, position.LeaguePoints);
         }
 
+        
         private PositionDTO getPosition(SummonerDTO summoner)
-        {   
+        {
             LeagueV4 league = new LeagueV4(Constants.Region);
 
             var position = league.getPositions(summoner.Id).Where(p => p.QueueType.Equals("RANKED_SOLO_5x5")).FirstOrDefault();

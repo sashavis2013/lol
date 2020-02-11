@@ -7,49 +7,48 @@
         xmlns:local="clr-namespace:LolApp"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="LoL" Height="600" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="#FF29166F" Icon="/LolApp;component/Assets/43343.png">
+        Title="LoL" Height="600" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None"  Icon="/LolApp;component/Assets/43343.png">
+    <Window.Background>
+        <ImageBrush ImageSource="/LoLApp;component/Assets/1.png"/>
+    </Window.Background>
     <Grid>
         <StackPanel    VerticalAlignment="Top" HorizontalAlignment="Left" >
-            <Button x:Name = "cmdMinimize" Click="cmdMinimize_Click" Content="_" Height="30" VerticalAlignment="Top">
+            <Button Width="50" x:Name = "cmdMinimize" Click="cmdMinimize_Click" Height="30" VerticalAlignment="Top" Margin="315 5 0 0" Background="White" BorderBrush="White">
                 <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border x:Name="Bd" Background="Transparent">
-                            <Path x:Name="Pt" 
-                      Stretch="Uniform" Stroke="#FFCAB4FC" StrokeThickness="2">
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="Bd" Background="Transparent" Margin="5">
+                            <Path x:Name="Pt" Stretch="Uniform" Stroke="White" StrokeThickness="3">
                                 <Path.Data >
-                                    <LineGeometry StartPoint = "100, 30" EndPoint = "200,130" >
-                                        <LineGeometry.Transform>
-                                            <TransformGroup >
-                                                <ScaleTransform/>
-                                                <SkewTransform/>
-                                                <RotateTransform Angle = "-45"/>
-                                                <TranslateTransform/>
-                                            </TransformGroup>
-                                        </LineGeometry.Transform>
-                                    </LineGeometry>
+                                    <PathGeometry>
+                                        <PathGeometry.Figures>
+                                            <PathFigure StartPoint="160,30" IsClosed="False">
+                                                <ArcSegment Point="300,100" Size="50 50"/>
+                                            </PathFigure>
+                                        </PathGeometry.Figures>
+                                    </PathGeometry>
                                 </Path.Data>
-                            </Path >
+                            </Path>
                         </Border>
                         <ControlTemplate.Triggers>
-                            <EventTrigger RoutedEvent="MouseEnter" >
-                                <BeginStoryboard Name="enter">
+                            <EventTrigger RoutedEvent="UIElement.MouseEnter" >
+                                <BeginStoryboard x:Name="enter">
                                     <Storyboard>
                                         <ColorAnimation To="DarkBlue"
                                                         Storyboard.TargetName="Pt"
                                                         Storyboard.TargetProperty="Stroke.Color"
                                                         FillBehavior="HoldEnd"
-                                                        Duration="0:0:0.5"/>
+                                                        Duration="0:0:0.3"/>
                                     </Storyboard>
                                 </BeginStoryboard>
                             </EventTrigger>
-                            <EventTrigger RoutedEvent="MouseLeave" >
+                            <EventTrigger RoutedEvent="UIElement.MouseLeave" >
                                 <BeginStoryboard>
                                     <Storyboard>
-                                        <ColorAnimation To="#FFCAB4FC"
+                                        <ColorAnimation To="White"
                                                         Storyboard.TargetName="Pt"
                                                         Storyboard.TargetProperty="Stroke.Color"
                                                         FillBehavior="HoldEnd"
-                                                        Duration="0:0:0.5"/>
+                                                        Duration="0:0:0.3"/>
                                     </Storyboard>
                                 </BeginStoryboard>
                             </EventTrigger>
@@ -59,34 +58,43 @@
             </Button>
 
         </StackPanel>
-        <StackPanel>
-            <Button x:Name="exitBtn" Content="" Height="30"  HorizontalAlignment="Right" VerticalAlignment="Top" Click="exitBtn_Click" >
+        <StackPanel Margin="5">
+            <Button x:Name="exitBtn" Content="" Height="30" Width="25"  HorizontalAlignment="Right" VerticalAlignment="Top" Click="exitBtn_Click" Margin="0 0 0 0"  >
                 <Button.Template>
-                    <ControlTemplate TargetType="Button">
+                    <ControlTemplate TargetType="{x:Type Button}">
                         <Border x:Name="Bd" Background="Transparent">
-                            <Path x:Name="Pt" Data="M0,0 M0.2,0.2 L 0.8,0.8 M0.2,0.8 L0.8,0.2 M1,1"
-                      Stretch="Uniform" Stroke="#FFCAB4FC" StrokeThickness="2"/>
+                            <Path x:Name="Pt" Stretch="Uniform" Stroke="White" StrokeThickness="3">
+                                <Path.Data>
+                                    <PathGeometry>
+                                        <PathGeometry.Figures>
+                                            <PathFigure StartPoint="160,30" IsClosed="False">
+                                                <ArcSegment Point="300,100" Size="50 50"  SweepDirection="Clockwise"/>
+                                            </PathFigure>
+                                        </PathGeometry.Figures>
+                                    </PathGeometry>
+                                </Path.Data>
+                            </Path>
                         </Border>
                         <ControlTemplate.Triggers>
-                            <EventTrigger RoutedEvent="MouseEnter" >
-                                <BeginStoryboard Name="enter">
+                            <EventTrigger RoutedEvent="UIElement.MouseEnter" >
+                                <BeginStoryboard x:Name="enter">
                                     <Storyboard>
                                         <ColorAnimation To="DarkBlue"
                                                         Storyboard.TargetName="Pt"
                                                         Storyboard.TargetProperty="Stroke.Color"
                                                         FillBehavior="HoldEnd"
-                                                        Duration="0:0:0.5"/>
+                                                        Duration="0:0:0.3"/>
                                     </Storyboard>
                                 </BeginStoryboard>
                             </EventTrigger>
-                            <EventTrigger RoutedEvent="MouseLeave" >
+                            <EventTrigger RoutedEvent="UIElement.MouseLeave" >
                                 <BeginStoryboard>
                                     <Storyboard>
-                                        <ColorAnimation To="#FFCAB4FC"
+                                        <ColorAnimation To="White"
                                                         Storyboard.TargetName="Pt"
                                                         Storyboard.TargetProperty="Stroke.Color"
                                                         FillBehavior="HoldEnd"
-                                                        Duration="0:0:0.5"/>
+                                                        Duration="0:0:0.3"/>
                                     </Storyboard>
                                 </BeginStoryboard>
                             </EventTrigger>
@@ -97,11 +105,12 @@
         </StackPanel>
         <StackPanel Margin="25">
             <Image Source="/Assets/logo.png" Width="250" />
-            <Border Background="#FFCAB4FC" Margin="10" CornerRadius="10">
-                <StackPanel Margin="20">
-                    <ComboBox Margin="10" Style="{StaticResource MaterialDesignFloatingHintComboBox}" materialDesign:HintAssist.Hint="Region" Text="{Binding Region}">
-                        <ComboBoxItem Content="RU"/>
-                        <ComboBoxItem Content="KR"/>
+            <Border  Margin="10">
+                <StackPanel   Margin="20" Opacity="0.70" >
+                    <ComboBox Background="Gray" Margin="17 9" Style="{StaticResource MaterialDesignFloatingHintComboBox}" materialDesign:HintAssist.Hint="Region" Text="{Binding Region}">
+                        
+                        <ComboBoxItem Content="RU" />
+                        <ComboBoxItem Content="KR" />
                         <ComboBoxItem Content="BR1"/>
                         <ComboBoxItem Content="OC1"/>
                         <ComboBoxItem Content="JP1"/>
@@ -112,9 +121,9 @@
                         <ComboBoxItem Content="LA1"/>
                         <ComboBoxItem Content="LA2"/>
                     </ComboBox>
-                    <TextBox  Margin="5" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Summoner" Text="{Binding SummonerName}"/>
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                        <Button x:Name="SignUp" Margin="15" Content="Search" Click="ButtonSignUp_Click"/>
+                    <TextBox  Background="Gray" Margin="17 20" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Summoner" Text="{Binding SummonerName}" PreviewKeyDown="EnterClicked" />
+                    <StackPanel Background="Gray"  Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 40">
+                        <Button x:Name="SignUp" Height="50" Width="70"  Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Content="Search" Click="ButtonSignUp_Click" />
                     </StackPanel>
                 </StackPanel>
             </Border>

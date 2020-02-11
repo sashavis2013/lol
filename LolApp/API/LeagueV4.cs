@@ -16,7 +16,7 @@ namespace LolApp.API
 
         public List<PositionDTO> getPositions(string summonerId)
         {
-            string path = "league/v4/positions/by-summoner/" + summonerId;
+            string path = "league/v4/entries/by-summoner/" + summonerId;
 
             var response = get(getURI(path));
             string content = response.Content.ReadAsStringAsync().Result;

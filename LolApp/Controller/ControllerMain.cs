@@ -10,13 +10,13 @@ namespace LolApp.Controller
 {
     public class ControllerMain
     {
-        public bool getSummoner(string SummonerName)
+        public bool getSummoner(Constants Summoner)
         {
             SummonerV4 summonerV4 = new SummonerV4(Constants.Region);
 
-            var summoner = summonerV4.getSummonerByName(SummonerName);
+            var summoner = summonerV4.getSummonerByName(Constants.Summoner);
 
-            Constants.Summoner = summoner;
+            Summoner.SetDTO(summoner);
 
             return summoner != null;
         }
