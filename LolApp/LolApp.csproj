@@ -70,9 +70,22 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="API\LeagueV4.cs" />
+    <Compile Include="API\MatchV4.cs" />
     <Compile Include="Controller\ControllerMain.cs" />
     <Compile Include="Controller\ControllerProfile.cs" />
+    <Compile Include="Model\MasteryDto.cs" />
+    <Compile Include="Model\MatchDto.cs" />
+    <Compile Include="Model\MatchlistDto.cs" />
+    <Compile Include="Model\MatchReferenceDto.cs" />
+    <Compile Include="Model\ParticipantDto.cs" />
+    <Compile Include="Model\ParticipantIdentityDto.cs" />
+    <Compile Include="Model\ParticipantStatsDto.cs" />
+    <Compile Include="Model\ParticipantTimelineDto.cs" />
+    <Compile Include="Model\PlayerDto.cs" />
     <Compile Include="Model\PositionDTO.cs" />
+    <Compile Include="Model\RuneDto.cs" />
+    <Compile Include="Model\TeamBansDto.cs" />
+    <Compile Include="Model\TeamStatsDto.cs" />
     <Compile Include="Utils\Constants.cs" />
     <Compile Include="View\ViewModel\ViewModelMain.cs" />
     <Compile Include="View\ViewModel\ViewModelProfile.cs" />

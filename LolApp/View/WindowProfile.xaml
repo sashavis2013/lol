@@ -42,11 +42,7 @@
 
 
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="10">
-                    
-
-
-                </StackPanel>
+                
 
 
                 <StackPanel Orientation="Horizontal" Margin="10">
@@ -69,9 +65,19 @@
                         <materialDesign:PackIcon Kind="Search" Width="25" Height="20" />
                     </Button>
                 </Grid>
+
+                <StackPanel Orientation="Horizontal" Margin="300 0">
+
+                    <TextBlock Text="{Binding totalGames}"/>
+
+                </StackPanel>
+
             </StackPanel>
 
+            
+
         </Border>
+        
         <StackPanel>
 
             <Button Width="50" x:Name = "cmdMinimize" Click="cmdMinimize_Click" Height="30" VerticalAlignment="Top" Margin="1180 0 0 0">
@@ -121,9 +127,9 @@
                 <TextBlock  FontSize="20"  FontWeight="Bold" Text="{Binding SummonerName}" Foreground="Black" />
             </StackPanel>
             <StackPanel Orientation="Horizontal" Height="130" Margin="20 5 0 0">
-                <Border Width="350" Height="130" Margin="250 0 0 0" VerticalAlignment="Top" HorizontalAlignment="Left" OpacityMask="Black"   Background="Transparent">
+                <Border Width="350" Height="130" Margin="250 0 0 0" VerticalAlignment="Top" HorizontalAlignment="Left" OpacityMask="Black"  Background="Transparent">
 
-                    <TabControl Background="Transparent">
+                    <TabControl BorderThickness="0" Background="Transparent" >
                         
                         
                         
@@ -146,7 +152,7 @@
                             Background="Transparent"
                             BorderBrush="{StaticResource SolidBorderBrush}" 
                             BorderThickness="1.5,1.5,1.5,1.5" 
-                            CornerRadius="5,5,0,0" >
+                            CornerRadius="0,35,0,0" >
                                                     <ContentPresenter x:Name="ContentSite"
                               VerticalAlignment="Center"
                               HorizontalAlignment="Center"
