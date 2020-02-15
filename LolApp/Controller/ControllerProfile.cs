@@ -32,6 +32,9 @@ namespace LolApp.Controller
             return position ?? new PositionDTO();
         }
 
+
+
+
         public void OpenMain()
         {
             MainWindow profile = new MainWindow();
