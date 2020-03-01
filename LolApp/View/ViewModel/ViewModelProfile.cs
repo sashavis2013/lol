@@ -18,6 +18,7 @@ namespace LolApp.View.ViewModel
         public int Losses { get; private set; }
         public int LeaguePoints { get; private set; }
 
+
         public ViewModelProfile(string summonerName, int icon, long level, string tier, string rank, int wins, int losses, int leaguePoints)
         {
             SummonerName = summonerName;
@@ -31,6 +32,9 @@ namespace LolApp.View.ViewModel
             
             LeaguePoints = leaguePoints;
             Emblem = "/LoLApp;component/Assets/" + tier + ".png";
+
+            
+
         }
     }
 }

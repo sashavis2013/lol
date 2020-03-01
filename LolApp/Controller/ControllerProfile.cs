@@ -32,7 +32,13 @@ namespace LolApp.Controller
             return position ?? new PositionDTO();
         }
 
+        private MatchlistDto getMatchlist(SummonerDTO summoner)
+        {
+            MatchV4 match = new MatchV4(Constants.Region);
+            var matchlist = match.GetMatchlistByAccountId(summoner.Id);
+            return matchlist ?? new MatchlistDto();
 
+        }
 
 
         public void OpenMain()
