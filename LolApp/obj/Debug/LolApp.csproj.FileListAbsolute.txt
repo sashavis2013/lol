@@ -58,7 +58,6 @@ C:\Users\33126\source\repos\Elo Stats\LolApp\bin\Debug\MaterialDesignColors.pdb
 C:\Users\33126\source\repos\Elo Stats\LolApp\bin\Debug\MaterialDesignThemes.Wpf.pdb
 C:\Users\33126\source\repos\Elo Stats\LolApp\bin\Debug\MaterialDesignThemes.Wpf.xml
 C:\Users\33126\source\repos\Elo Stats\LolApp\bin\Debug\Newtonsoft.Json.xml
-C:\Users\33126\source\repos\Elo Stats\LolApp\obj\Debug\LolApp.csprojAssemblyReference.cache
 C:\Users\33126\source\repos\Elo Stats\LolApp\obj\Debug\View\MainWindow.g.cs
 C:\Users\33126\source\repos\Elo Stats\LolApp\obj\Debug\View\WindowProfile.g.cs
 C:\Users\33126\source\repos\Elo Stats\LolApp\obj\Debug\App.g.cs
@@ -70,7 +69,6 @@ C:\Users\33126\source\repos\Elo Stats\LolApp\obj\Debug\View\WindowProfile.baml
 C:\Users\33126\source\repos\Elo Stats\LolApp\obj\Debug\LolApp.g.resources
 C:\Users\33126\source\repos\Elo Stats\LolApp\obj\Debug\LolApp.Properties.Resources.resources
 C:\Users\33126\source\repos\Elo Stats\LolApp\obj\Debug\LolApp.csproj.GenerateResource.cache
-C:\Users\33126\source\repos\Elo Stats\LolApp\obj\Debug\LolApp.csproj.CoreCompileInputs.cache
-C:\Users\33126\source\repos\Elo Stats\LolApp\obj\Debug\LolApp.csproj.CopyComplete
 C:\Users\33126\source\repos\Elo Stats\LolApp\obj\Debug\LolApp.exe
 C:\Users\33126\source\repos\Elo Stats\LolApp\obj\Debug\LolApp.pdb
+C:\Users\33126\Source\Repos\Elo Stats\LolApp\obj\Debug\LolApp.csprojResolveAssemblyReference.cache

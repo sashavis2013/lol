@@ -15,6 +15,27 @@ namespace LolApp.API
         {
         }
 
+
+        //public MatchReferenceDto GetChampionName(championId)
+        //{
+
+        //    string path = "http://ddragon.leagueoflegends.com/cdn/10.5.1/data/en_US/champion.json";
+        //    string pt = getURI(path);
+        //    var response = get(pt);
+        //    string content = response.Content.ReadAsStringAsync().Result;
+
+
+        //    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+        //    {
+        //        return JsonConvert.DeserializeObject()(content);
+        //    }
+        //    else
+        //    {
+        //        return null;
+        //    }
+        //}
+
+
         public MatchlistDto GetMatchlistByAccountId(string accountId)
         {
 

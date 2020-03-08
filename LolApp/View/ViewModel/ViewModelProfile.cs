@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LolApp.Model;
 
 namespace LolApp.View.ViewModel
 {
@@ -17,9 +18,9 @@ namespace LolApp.View.ViewModel
         public int Wins { get; private set; }
         public int Losses { get; private set; }
         public int LeaguePoints { get; private set; }
+        public List<MatchReferenceDto> matches { get; private set; }
 
-
-        public ViewModelProfile(string summonerName, int icon, long level, string tier, string rank, int wins, int losses, int leaguePoints)
+        public ViewModelProfile(string summonerName, int icon, long level, string tier, string rank, int wins, int losses, int leaguePoints, List<MatchReferenceDto> matches)
         {
             SummonerName = summonerName;
             Icon = "http://opgg-static.akamaized.net/images/profile_icons/profileIcon" + icon + ".jpg";

@@ -18,8 +18,10 @@ namespace LolApp.Controller
             cont.getSummoner(summoner);
             var position = getPosition(Constants.summonerDTO);
 
+            var matchlist = getMatchlist(Constants.summonerDTO);
+
             return new ViewModelProfile(Constants.summonerDTO.Name, Constants.summonerDTO.ProfileIconId, Constants.summonerDTO.SummonerLevel, position.Tier, position.Rank,
-                position.Wins, position.Losses, position.LeaguePoints);
+                position.Wins, position.Losses, position.LeaguePoints, matchlist.matches);
         }
 
         
@@ -35,11 +37,18 @@ namespace LolApp.Controller
         private MatchlistDto getMatchlist(SummonerDTO summoner)
         {
             MatchV4 match = new MatchV4(Constants.Region);
-            var matchlist = match.GetMatchlistByAccountId(summoner.Id);
+            var matchlist = match.GetMatchlistByAccountId(summoner.accountId);
             return matchlist ?? new MatchlistDto();
 
         }
 
+        private MatchDto getMatch(MatchlistDto matchlist, int matchIndex)
+        {
+            MatchV4 match = new MatchV4(Constants.Region);
+            var matchdto = match.GetMatchByMatchId(matchlist.matches[matchIndex].ToString());
+            return matchdto ?? new MatchDto();
+
+        }
 
         public void OpenMain()
         {
