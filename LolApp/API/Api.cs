@@ -20,7 +20,7 @@ namespace LolApp.API
             Key = getKey("API/Key.txt"); 
             
         }
-
+        
         protected HttpResponseMessage get (string URL)
         {
             using(HttpClient client = new HttpClient())

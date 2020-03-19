@@ -16,12 +16,17 @@ namespace LolApp.Controller
         {
             ControllerMain cont = new ControllerMain();
             cont.getSummoner(summoner);
+
             var position = getPosition(Constants.summonerDTO);
 
             var matchlist = getMatchlist(Constants.summonerDTO);
 
+            int matchIndex=0;
+
+            var matchdto = getMatch(Constants.MatchlistDto, matchIndex);
+
             return new ViewModelProfile(Constants.summonerDTO.Name, Constants.summonerDTO.ProfileIconId, Constants.summonerDTO.SummonerLevel, position.Tier, position.Rank,
-                position.Wins, position.Losses, position.LeaguePoints, matchlist.matches);
+                position.Wins, position.Losses, position.LeaguePoints, matchIndex, matchlist.matches, matchdto.gameCreation, matchdto.gameDuration, matchdto.gameId, matchdto.gameMode, matchdto.gameType, matchdto.gameVersion, matchdto.mapId, matchdto.participantIdentities, matchdto.participants, matchdto.platformId, matchdto.queueId, matchdto.seasonId, matchdto.teams) ;
         }
 
         
@@ -49,7 +54,7 @@ namespace LolApp.Controller
             return matchdto ?? new MatchDto();
 
         }
-
+        
         public void OpenMain()
         {
             MainWindow profile = new MainWindow();

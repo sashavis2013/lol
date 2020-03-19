@@ -12,7 +12,8 @@ namespace LolApp.Utils
         public static string summonerName;
         public static string region;
         public static SummonerDTO SummonerDTO;
-
+        public static MatchlistDto MatchlistDto;
+        
         public static string Summoner
         {
             get
@@ -45,7 +46,20 @@ namespace LolApp.Utils
             {
                 SummonerDTO = summonerDTO;
             }
-        } 
+        }
+
+        public static MatchlistDto matchlistDto
+        {
+            get
+            {
+                return MatchlistDto;
+            }
+            private set
+            {
+                MatchlistDto = matchlistDto;
+            }
+        }
+
         public Constants(string Name, string Region)
         {
             summonerName = Name;
