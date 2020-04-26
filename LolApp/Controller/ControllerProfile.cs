@@ -23,7 +23,7 @@ namespace LolApp.Controller
 
             int matchIndex=0;
 
-            var matchdto = getMatch(Constants.MatchlistDto, matchIndex);
+            var matchdto = getMatch(matchlist, matchIndex);
 
             return new ViewModelProfile(Constants.summonerDTO.Name, Constants.summonerDTO.ProfileIconId, Constants.summonerDTO.SummonerLevel, position.Tier, position.Rank,
                 position.Wins, position.Losses, position.LeaguePoints, matchIndex, matchlist.matches, matchdto.gameCreation, matchdto.gameDuration, matchdto.gameId, matchdto.gameMode, matchdto.gameType, matchdto.gameVersion, matchdto.mapId, matchdto.participantIdentities, matchdto.participants, matchdto.platformId, matchdto.queueId, matchdto.seasonId, matchdto.teams) ;
@@ -43,6 +43,7 @@ namespace LolApp.Controller
         {
             MatchV4 match = new MatchV4(Constants.Region);
             var matchlist = match.GetMatchlistByAccountId(summoner.accountId);
+            var matchdto = match.GetMatchByMatchId(matchlist.matches[1].ToString());
             return matchlist ?? new MatchlistDto();
 
         }
@@ -50,8 +51,8 @@ namespace LolApp.Controller
         private MatchDto getMatch(MatchlistDto matchlist, int matchIndex)
         {
             MatchV4 match = new MatchV4(Constants.Region);
-            var matchdto = match.GetMatchByMatchId(matchlist.matches[matchIndex].ToString());
-            return matchdto ?? new MatchDto();
+            var matchdto = match.GetMatchByMatchId(matchlist.matches[matchIndex].gameId.ToString());
+              return matchdto ?? new MatchDto();
 
         }
         
