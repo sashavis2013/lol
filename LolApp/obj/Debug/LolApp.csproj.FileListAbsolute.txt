@@ -97,3 +97,4 @@ C:\Users\VGPROD\source\repos\EloStats\LolApp\obj\Debug\LolApp.csproj.GenerateRes
 C:\Users\VGPROD\source\repos\EloStats\LolApp\obj\Debug\LolApp.csproj.CopyComplete
 C:\Users\VGPROD\source\repos\EloStats\LolApp\obj\Debug\LolApp.exe
 C:\Users\VGPROD\source\repos\EloStats\LolApp\obj\Debug\LolApp.pdb
+C:\Users\VGPROD\source\repos\EloStats\LolApp\obj\Debug\View\Match.baml

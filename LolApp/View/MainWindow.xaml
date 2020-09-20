@@ -34,7 +34,7 @@
                             <EventTrigger RoutedEvent="UIElement.MouseEnter" >
                                 <BeginStoryboard x:Name="enter">
                                     <Storyboard>
-                                        <ColorAnimation To="DarkBlue"
+                                        <ColorAnimation To="LightGreen"
                                                         Storyboard.TargetName="Pt"
                                                         Storyboard.TargetProperty="Stroke.Color"
                                                         FillBehavior="HoldEnd"
@@ -80,7 +80,7 @@
                             <EventTrigger RoutedEvent="UIElement.MouseEnter" >
                                 <BeginStoryboard x:Name="enter">
                                     <Storyboard>
-                                        <ColorAnimation To="DarkBlue"
+                                        <ColorAnimation To="IndianRed"
                                                         Storyboard.TargetName="Pt"
                                                         Storyboard.TargetProperty="Stroke.Color"
                                                         FillBehavior="HoldEnd"

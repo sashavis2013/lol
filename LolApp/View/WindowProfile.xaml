@@ -7,87 +7,206 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         
-        Title="LoL" Height="800" Width="1300" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None"  Icon="43343.png">
+        Title="LoL" Height="720" Width="1280" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None"  Icon="43343.png">
     <Window.Background>
-        <ImageBrush ImageSource="/LolApp;component/Assets/434.png"/>
+        <ImageBrush ImageSource="/LolApp;component/Assets/123.png" Opacity="0.5"/>
+        <!--<ImageBrush ImageSource="/LolApp;component/Assets/Ahri.png" Opacity="0.5"/>-->
     </Window.Background>
-    
-    
-    
     <Grid>
 
-        
+        <Grid.ColumnDefinitions>
 
-        <Border Background="#00515151"  CornerRadius="5" Margin="20 40 20 20">
-            
-            
-            
-            <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="60 0 0 0">
-                <Border Width="120" Height="120" Margin="20 70 0 0" BorderBrush="Black" HorizontalAlignment="Left" BorderThickness="1" Opacity="1" CornerRadius="5">
-                    <Border.Background>
-                        <ImageBrush ImageSource="{Binding Icon}"/>
-                    </Border.Background>
+            <ColumnDefinition Width="290*"/>
+            <ColumnDefinition Width="331*"/>
+            <ColumnDefinition Width="158*"/>
+            <ColumnDefinition Width="423*"/>
+            <ColumnDefinition Width="78*"/>
 
-                </Border>
+        </Grid.ColumnDefinitions>
 
-                
-                
-                <StackPanel Width="120" Height="40" Margin="-1100 0 0 0">
-                    <TextBlock Margin="40 0 0 0" FontWeight="Bold" Text="{Binding Level}" Foreground="Black" FontSize="20"/>
-                    <TextBlock Margin="90 -28 0 0" FontWeight="Bold" Text="Lvl" Foreground="Black" FontSize="20" />
-                </StackPanel>
+        <Grid.RowDefinitions>
 
-                <StackPanel Orientation="Horizontal" Margin="10">
-                    
+            <RowDefinition Height="14*"/>
+            <RowDefinition Height="113*"/>
+            <RowDefinition Height="233*"/>
 
+        </Grid.RowDefinitions>
 
-                </StackPanel>
-                
+        <StackPanel HorizontalAlignment="Center" Grid.Column="0" Height="175" Grid.Row="1" VerticalAlignment="Center" Width="175" Margin="75,18,49,23">
+            <Border Width="165"  Height="165" BorderBrush="#e7e6e7" HorizontalAlignment="Center" BorderThickness="4" Opacity="1" CornerRadius="15" VerticalAlignment="Center"  >
 
+                <Border.Background>
+                    <ImageBrush ImageSource="{Binding Icon}"/>
+                </Border.Background>
 
-                <StackPanel Orientation="Horizontal" Margin="10">
-                    <StackPanel>
-                        <TextBlock Text="Winrate" Foreground="LimeGreen" FontSize="15" FontWeight="Medium" Margin="5"/>
-                    </StackPanel>
-                    <StackPanel>
-                        <TextBlock Text="{Binding winrate}" FontSize="15" Margin="5"/>
-                    </StackPanel>
-                    <StackPanel>
-                        <TextBlock Text=" %" FontSize="15" Margin="5"/>
-                    </StackPanel>
+            </Border>
+        </StackPanel>
 
+        <StackPanel HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1" Width="166" Margin="75,-5,49,203" >
+            <TextBlock HorizontalAlignment="Center"  FontSize="16"  FontWeight="Bold" Text="{Binding SummonerName}" Foreground="#e7e6e7" />
+        </StackPanel>
+        <Border HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1" Width="66" Margin="164,150,60,34" Background="SlateGray" Height="20" CornerRadius="10">
 
-                </StackPanel>
+            <StackPanel  >
 
-                
-                <Grid Margin="5">
-                    <Button HorizontalAlignment="Left" Style="{StaticResource MaterialDesignFlatButton}" Width="100" Click="Button_Click1">
-                        <materialDesign:PackIcon Kind="Search" Width="25" Height="20" />
-                    </Button>
-                </Grid>
-
-                <StackPanel Orientation="Horizontal" Margin="300 0">
-
-                    <ListBox Margin="20" ItemsSource="{Binding Matchlist}">
-                        <ListBox.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="{Binding matches}" />
-                                </StackPanel>
-                            </DataTemplate>
-                        </ListBox.ItemTemplate>
-                        </ListBox>
-                </StackPanel>
+                <TextBlock Margin="-15, 0, 5, 5" Height="12" Width="20" FontWeight="Bold" Text="{Binding Level}" Foreground="#e7e6e7" FontSize="11"/>
+                <TextBlock Margin="28, -17, 5, 5" Height="12" Width="20" FontWeight="Bold" Text="LVL" Foreground="#e7e6e7" FontSize="11"/>
 
             </StackPanel>
+        </Border>
 
-            
-
+        <Border CornerRadius="15" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="0" Width="167" Margin="74,20,49,50" Background="#e7e6e7" Opacity="0.5">
+        <StackPanel/>
         </Border>
         
-        <StackPanel>
 
-            <Button Width="50" x:Name = "cmdMinimize" Click="cmdMinimize_Click" Height="30" VerticalAlignment="Top" Margin="1180 0 0 0">
+        <Border CornerRadius="15" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="1" Width="871" Grid.ColumnSpan="3" Margin="36,21,5,50" Background="#e7e6e7" Opacity="0.5">
+        <StackPanel/>
+        </Border>
+        <StackPanel HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1" Width="254" Margin="36,28,41,24">
+
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Height="175">
+                <Border VerticalAlignment="Top" HorizontalAlignment="Left" OpacityMask="Black"  Background="Transparent">
+
+                    <TabControl BorderThickness="0" Background="#e7e6e7" >
+
+
+
+                        <TabControl.Resources>
+
+                            <SolidColorBrush x:Key="SolidBorderBrush" Color="#888" />
+
+                            <SolidColorBrush x:Key="DisabledBorderBrush" Color="#AAA" />
+
+                            <SolidColorBrush x:Key="DisabledForegroundBrush" Color="#888" />
+
+                            <Style TargetType="{x:Type TabItem}">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type TabItem}">
+                                            <Grid Background="Transparent">
+                                                <Border 
+                            Name="Border"
+                            Margin="0,0,5,0" 
+                            Background="#636363"
+                            BorderBrush="{StaticResource SolidBorderBrush}" 
+                            
+                            BorderThickness="1.5,1.5,1.5,1.5"
+                                             
+                            CornerRadius="7,7,0,0" >
+                                                    <ContentPresenter x:Name="ContentSite"
+                              VerticalAlignment="Center"
+                              HorizontalAlignment="Center"
+                              ContentSource="Header"
+                              Margin="12,2,12,2"
+                              RecognizesAccessKey="True"/>
+                                                </Border>
+                                            </Grid>
+                                            <ControlTemplate.Triggers>
+
+
+
+                                                <Trigger Property="IsSelected" Value="True">
+                                                    <Setter Property="Panel.ZIndex" Value="100" />
+
+                                                    <Setter TargetName="Border" Property="Background" Value="#e7e6e7" />
+                                                    <Setter TargetName="Border" Property="BorderThickness" Value="1.5,1.5,1.5,0" />
+                                                </Trigger>
+
+
+                                                <Trigger Property="IsEnabled" Value="False">
+
+                                                    <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource DisabledBorderBrush}" />
+                                                    <Setter Property="Foreground" Value="{StaticResource DisabledForegroundBrush}" />
+                                                </Trigger>
+
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </TabControl.Resources>
+                        <TabItem Header="Ranked" BorderBrush="Transparent" Background="Transparent" >
+
+
+                            <Grid Background="Transparent" >
+
+                                <StackPanel Orientation="Horizontal" Margin="10">
+                                    <StackPanel>
+                                        <TextBlock Text="Winrate" Foreground="LimeGreen" FontSize="15" FontWeight="Medium" Margin="100, 113, 5, 5"/>
+                                    </StackPanel>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding winrateText}" FontSize="15" Margin="0, 113"/>
+                                    </StackPanel>
+                                </StackPanel>
+
+                                <Grid Margin="200,-235,0,0" Height="25" Width="50" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <Button HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource MaterialDesignFlatButton}" Width="50" Click="Button_Click1">
+                                        <materialDesign:PackIcon HorizontalAlignment="Center"  Kind="Search" Width="50" Height="20" />
+                                    </Button>
+                                </Grid>
+
+                                <StackPanel>
+                                    <TextBlock Text="Wins" Foreground="LimeGreen" FontSize="15" FontWeight="Medium" Margin="5" Width="35" HorizontalAlignment="Left"/>
+                                </StackPanel>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Wins}" FontSize="15" Margin="42 5 0 0" Width="30" HorizontalAlignment="Left"/>
+                                </StackPanel>
+
+                                <StackPanel Margin="70 0 0 0">
+                                    <TextBlock Text="Losses" Foreground="Red" FontSize="15" FontWeight="Medium" Margin="5" Width="45" HorizontalAlignment="Left"/>
+                                </StackPanel>
+
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Losses}" FontSize="15" Margin="122 5 0 0" Width="30" HorizontalAlignment="Left"/>
+                                </StackPanel>
+
+                                <StackPanel>
+
+                                    <Image Height="90" Source="{Binding Emblem}" Width="90" HorizontalAlignment="Right" Margin="0, 35, 160, 0" Stretch="Fill">
+                                        <Image.Effect>
+                                            <DropShadowEffect Color="Black" Direction="90" Opacity="0.5" ShadowDepth="2" BlurRadius="12" />
+                                        </Image.Effect>
+                                    </Image>
+                                    <StackPanel Height="20" VerticalAlignment="Center">
+                                        <TextBlock Width="30" Text="{Binding Tier}" FontSize="14"  FontWeight="Medium" Margin="-200, 0, 0, 0"/>
+                                        <TextBlock Width="80" Text="{Binding Rank}" FontSize="14" FontWeight="Medium" Margin="-80, -19, 0, 0"/>
+                                    </StackPanel>
+
+                                    <StackPanel Height="20" Width="45" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0, -175, 28, 0">
+                                        <TextBlock Text="{Binding LeaguePoints}" FontSize="14" FontWeight="Medium" Margin="0, 0, 0, 0"/>
+                                        <TextBlock Text="LP" FontSize="16" FontWeight="Medium" Margin="22, -22, 0, 0"/>
+                                    </StackPanel>
+
+                                </StackPanel>
+
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="Normal" Margin="0 0 0 0">
+                            <Grid Background="#e7e6e7"/>
+                        </TabItem>
+                        <TabItem Header="Flex">
+                            <Grid Background="#e7e6e7"/>
+                        </TabItem>
+                        <TabItem Header="TFT">
+                            <Grid Background="#e7e6e7"/>
+                        </TabItem>
+                    </TabControl>
+
+                </Border>
+            </StackPanel >
+
+        </StackPanel>
+
+        <Border CornerRadius="15" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="3" Width="412" Margin="6,28,5,23" Background="#e7e6e7" Opacity="0.5">
+            <StackPanel>
+            
+        </StackPanel>
+        </Border>
+
+                <StackPanel Grid.Column="4" Grid.Row="0" HorizontalAlignment="Left" Margin="0, 0, 0, 0">
+
+            <Button Width="50" x:Name = "cmdMinimize" Click="cmdMinimize_Click" Height="30" VerticalAlignment="Top" >
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border x:Name="Bd" Background="Transparent" Margin="5">
@@ -107,7 +226,7 @@
                             <EventTrigger RoutedEvent="UIElement.MouseEnter" >
                                 <BeginStoryboard x:Name="enter">
                                     <Storyboard>
-                                        <ColorAnimation To="DarkBlue"
+                                        <ColorAnimation To="LightGreen"
                                                         Storyboard.TargetName="Pt"
                                                         Storyboard.TargetProperty="Stroke.Color"
                                                         FillBehavior="HoldEnd"
@@ -130,167 +249,59 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <StackPanel Width="400" Height="40" Margin="-350 85 0 0">
-                <TextBlock  FontSize="20"  FontWeight="Bold" Text="{Binding SummonerName}" Foreground="Black" />
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Height="135" Margin="20 5 0 0">
-                <Border Width="440" Height="135" Margin="250 0 0 0" VerticalAlignment="Top" HorizontalAlignment="Left" OpacityMask="Black"  Background="Transparent">
-
-                    <TabControl BorderThickness="0" Background="Transparent" >
-                        
-                        
-                        
-                        <TabControl.Resources>
-
-                            <SolidColorBrush x:Key="SolidBorderBrush" Color="#888" />
-
-                            <SolidColorBrush x:Key="DisabledBorderBrush" Color="#AAA" />
-
-                            <SolidColorBrush x:Key="DisabledForegroundBrush" Color="#888" />
-
-                            <Style TargetType="{x:Type TabItem}">
-                                <Setter Property="Template">
-                                    <Setter.Value>
-                                        <ControlTemplate TargetType="{x:Type TabItem}">
-                                            <Grid Background="Transparent">
-                                                <Border 
-                            Name="Border"
-                            Margin="0,0,5,0" 
-                            Background="Transparent"
-                            BorderBrush="{StaticResource SolidBorderBrush}" 
-                            
-                            BorderThickness="1.5,1.5,1.5,1.5"
-                                             
-                            CornerRadius="0,35,0,0" >
-                                                    <ContentPresenter x:Name="ContentSite"
-                              VerticalAlignment="Center"
-                              HorizontalAlignment="Center"
-                              ContentSource="Header"
-                              Margin="12,2,12,2"
-                              RecognizesAccessKey="True"/>
-                                                </Border>
-                                            </Grid>
-                                            <ControlTemplate.Triggers>
-
-                                                
-
-                                                <Trigger Property="IsSelected" Value="True">
-                                                    <Setter Property="Panel.ZIndex" Value="100" />
-                                                    
-                                                    <Setter TargetName="Border" Property="Background" Value="LightGray" />
-                                                    <Setter TargetName="Border" Property="BorderThickness" Value="1.5,1.5,1.5,0" />
-                                                </Trigger>
-
-
-                                                <Trigger Property="IsEnabled" Value="False">
-                                                    
-                                                    <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource DisabledBorderBrush}" />
-                                                    <Setter Property="Foreground" Value="{StaticResource DisabledForegroundBrush}" />
-                                                </Trigger>
-                                                
-                                            </ControlTemplate.Triggers>
-                                        </ControlTemplate>
-                                    </Setter.Value>
-                                </Setter>
-                            </Style>
-                        </TabControl.Resources>
-                        <TabItem Header="Ranked" BorderBrush="Transparent" Background="Transparent"  >
-                            
-                             
-                            <Grid Background="Transparent">
-
-                                <StackPanel>
-                                    <TextBlock Text="Wins" Foreground="LimeGreen" FontSize="15" FontWeight="Medium" Margin="5"/>
-                                </StackPanel>
-                                <StackPanel>
-                                    <TextBlock Text="{Binding Wins}" FontSize="15" Margin="50 5 0 0"/>
-                                </StackPanel>
-
-                                <StackPanel Margin="80 0 0 0">
-                                    <TextBlock Text="Losses" Foreground="Red" FontSize="15" FontWeight="Medium" Margin="5"/>
-                                </StackPanel>
-                                <StackPanel>
-                                    <TextBlock Text="{Binding Losses}" FontSize="15" Margin="135 5 0 0"/>
-                                </StackPanel>
-                                <StackPanel>
-                                <Image Height="115" Source="{Binding Emblem}" Width="115" HorizontalAlignment="Right" Margin="0 -10 0 0"/>
-                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="45 -70">
-                                    <TextBlock Text="{Binding Tier}" FontSize="14" Margin="5 0 5 0" FontWeight="Medium"/>
-                                        <TextBlock Text="{Binding Rank}" FontSize="14" FontWeight="Medium" Margin="5 0 5 0"/>
-                                        <TextBlock Text="{Binding LeaguePoints}" FontSize="14" FontWeight="Medium" Margin="-45 20 0 0"/>
-                                        <TextBlock Text="LP" FontSize="14" FontWeight="Medium" Margin="-20 20 55 0"/>
-                                </StackPanel>
-                                </StackPanel>
-
-                            </Grid>
-                        </TabItem>
-                        <TabItem Header="Normal" Margin="0 0 0 0">
-                            <Grid Background="#FFE5E5E5"/>
-                        </TabItem>
-                        <TabItem Header="Flex">
-                            <Grid Background="#FFE5E5E5"/>
-                        </TabItem>
-                        <TabItem Header="TFT">
-                            <Grid Background="#FFE5E5E5"/>
-                        </TabItem>
-                    </TabControl>
-
-                </Border>
-            </StackPanel >
-
-            
-            <StackPanel Margin="5">
-                <Button x:Name="exitBtn" Content="" Height="30" Width="25"  HorizontalAlignment="Right" VerticalAlignment="Top" Click="exitBtn_Click" Margin="0 -295 0 0"  >
-                    <Button.Template>
-                        <ControlTemplate TargetType="{x:Type Button}">
-                            <Border x:Name="Bd" Background="Transparent">
-                                <Path x:Name="Pt" Stretch="Uniform" Stroke="White" StrokeThickness="3">
-                                    <Path.Data>
-                                        <PathGeometry>
-                                            <PathGeometry.Figures>
-                                                <PathFigure StartPoint="160,30" IsClosed="False">
-                                                    <ArcSegment Point="300,100" Size="50 50"  SweepDirection="Clockwise"/>
-                                                </PathFigure>
-                                            </PathGeometry.Figures>
-                                        </PathGeometry>
-                                    </Path.Data>
-                                </Path>
-                            </Border>
-                            <ControlTemplate.Triggers>
-                                <EventTrigger RoutedEvent="UIElement.MouseEnter" >
-                                    <BeginStoryboard x:Name="enter">
-                                        <Storyboard>
-                                            <ColorAnimation To="DarkBlue"
-                                                        Storyboard.TargetName="Pt"
-                                                        Storyboard.TargetProperty="Stroke.Color"
-                                                        FillBehavior="HoldEnd"
-                                                        Duration="0:0:0.3"/>
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </EventTrigger>
-                                <EventTrigger RoutedEvent="UIElement.MouseLeave" >
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <ColorAnimation To="White"
-                                                        Storyboard.TargetName="Pt"
-                                                        Storyboard.TargetProperty="Stroke.Color"
-                                                        FillBehavior="HoldEnd"
-                                                        Duration="0:0:0.3"/>
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </EventTrigger>
-                            </ControlTemplate.Triggers>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
-            </StackPanel>
-            
-            
-            <StackPanel    VerticalAlignment="Top" HorizontalAlignment="Left" >
-                <StackPanel HorizontalAlignment="Right"/>
-            </StackPanel>
-
-            
         </StackPanel>
+
+        <StackPanel Grid.Column="4" Grid.Row="0" HorizontalAlignment="Center" Margin="35, 0, 0, 0">
+
+            <Button x:Name="exitBtn" Content="" Height="30" Width="25"  HorizontalAlignment="Right" VerticalAlignment="Top" Click="exitBtn_Click" >
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="Bd" Background="Transparent">
+                            <Path x:Name="Pt" Stretch="Uniform" Stroke="White" StrokeThickness="3">
+                                <Path.Data>
+                                    <PathGeometry>
+                                        <PathGeometry.Figures>
+                                            <PathFigure StartPoint="160,30" IsClosed="False">
+                                                <ArcSegment Point="300,100" Size="50 50"  SweepDirection="Clockwise"/>
+                                            </PathFigure>
+                                        </PathGeometry.Figures>
+                                    </PathGeometry>
+                                </Path.Data>
+                            </Path>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <EventTrigger RoutedEvent="UIElement.MouseEnter" >
+                                <BeginStoryboard x:Name="enter">
+                                    <Storyboard>
+                                        <ColorAnimation To="IndianRed"
+                                                        Storyboard.TargetName="Pt"
+                                                        Storyboard.TargetProperty="Stroke.Color"
+                                                        FillBehavior="HoldEnd"
+                                                        Duration="0:0:0.3"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="UIElement.MouseLeave" >
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation To="White"
+                                                        Storyboard.TargetName="Pt"
+                                                        Storyboard.TargetProperty="Stroke.Color"
+                                                        FillBehavior="HoldEnd"
+                                                        Duration="0:0:0.3"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </StackPanel>
+
+
+
+
     </Grid>
+
+
 </Window>

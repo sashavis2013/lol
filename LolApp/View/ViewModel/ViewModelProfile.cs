@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using LolApp.Model;
 
@@ -40,6 +43,10 @@ namespace LolApp.View.ViewModel
         //public PlayerDto Player { get; private set; }
         //public int ParticipantId { get; private set; }
 
+        public double winrate { get; private set; }
+        public double totalGames { get; private set; }
+        public string winrateText { get; private set; }
+
         public ViewModelProfile(string summonerName, int icon, long level, string tier, string rank, int wins, int losses, int leaguePoints, List<MatchReferenceDto> matches, int matchIndex, int seasonId, int queueId, long gameId, List<ParticipantIdentityDto> participantIdentities, string gameVersion, string platformId, string gameMode, int mapId, string gameType, List<TeamStatsDto> teams, List<ParticipantDto> participants, long gameDuration, long gameCreation/*, PlayerDto player,int participantId*/)
         {
             SummonerName = summonerName;
@@ -70,13 +77,12 @@ namespace LolApp.View.ViewModel
             LeaguePoints = leaguePoints;
             Emblem = "/LoLApp;component/Assets/" + tier + ".png";
 
-            
 
         }
 
         public ViewModelProfile(string name, int profileIconId, long summonerLevel, string tier, string rank, int wins, int losses, int leaguePoints, int matchIndex, List<MatchReferenceDto> matches, long gameCreation, long gameDuration, long gameId, string gameMode, string gameType, string gameVersion, int mapId, List<ParticipantIdentityDto> participantIdentities, List<ParticipantDto> participants, string platformId, int queueId, int seasonId, List<TeamStatsDto> teams)
         {
-            this.name = name;
+            this.SummonerName = name;
             this.profileIconId = profileIconId;
             this.summonerLevel = summonerLevel;
             Tier = tier;
@@ -99,6 +105,22 @@ namespace LolApp.View.ViewModel
             QueueId = queueId;
             SeasonId = seasonId;
             Teams = teams;
+
+            
+
+
+            totalGames = Wins + Losses;
+            winrate = (Wins / totalGames);
+            //winrate = Wins / (Wins + Losses);
+            
+            //winrateText = $"{winrate} %";
+            //winrateText = winrate.ToString("#.##\\%");
+            winrateText = winrate.ToString("P");
+
+            Emblem = "/LoLApp;component/Assets/" + tier + ".png";
+            Icon = "http://opgg-static.akamaized.net/images/profile_icons/profileIcon" + this.profileIconId + ".jpg";
+            Level = summonerLevel;
+            
         }
     }
 }
