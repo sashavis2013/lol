@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LolApp.View;
 
 namespace LolApp.Controller
 {
@@ -61,5 +62,8 @@ namespace LolApp.Controller
             MainWindow profile = new MainWindow();
             profile.Show();
         }
+
+        
+
     }
 }

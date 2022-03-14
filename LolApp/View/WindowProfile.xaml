@@ -12,6 +12,9 @@
         <ImageBrush ImageSource="/LolApp;component/Assets/123.png" Opacity="0.5"/>
         <!--<ImageBrush ImageSource="/LolApp;component/Assets/Ahri.png" Opacity="0.5"/>-->
     </Window.Background>
+
+
+    
     <Grid>
 
         <Grid.ColumnDefinitions>
@@ -61,18 +64,22 @@
         
 
         <Border CornerRadius="15" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="1" Width="871" Grid.ColumnSpan="3" Margin="36,21,5,50" Background="#e7e6e7" Opacity="0.5">
-        <StackPanel/>
+            <StackPanel>
+                <TextBlock Text="{Binding gameDurationMin}" Height="50" Width="50" FontSize="12"/>
+            </StackPanel>
         </Border>
         <StackPanel HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1" Width="254" Margin="36,28,41,24">
 
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Height="175">
-                <Border VerticalAlignment="Top" HorizontalAlignment="Left" OpacityMask="Black"  Background="Transparent">
+                <Border VerticalAlignment="Top" HorizontalAlignment="Left" OpacityMask="Black"  Background="Transparent" Height="175" CornerRadius="0">
 
-                    <TabControl BorderThickness="0" Background="#e7e6e7" >
-
+                    <TabControl BorderThickness="0" Background="#e7e6e7"  >
+                       
 
 
                         <TabControl.Resources>
+
+                            
 
                             <SolidColorBrush x:Key="SolidBorderBrush" Color="#888" />
 
@@ -80,14 +87,14 @@
 
                             <SolidColorBrush x:Key="DisabledForegroundBrush" Color="#888" />
 
-                            <Style TargetType="{x:Type TabItem}">
+                                <Style TargetType="{x:Type TabItem}">
                                 <Setter Property="Template">
                                     <Setter.Value>
                                         <ControlTemplate TargetType="{x:Type TabItem}">
                                             <Grid Background="Transparent">
                                                 <Border 
                             Name="Border"
-                            Margin="0,0,5,0" 
+                            Margin="0,0,5,5" 
                             Background="#636363"
                             BorderBrush="{StaticResource SolidBorderBrush}" 
                             
@@ -95,11 +102,11 @@
                                              
                             CornerRadius="7,7,0,0" >
                                                     <ContentPresenter x:Name="ContentSite"
-                              VerticalAlignment="Center"
-                              HorizontalAlignment="Center"
-                              ContentSource="Header"
-                              Margin="12,2,12,2"
-                              RecognizesAccessKey="True"/>
+                                                                      VerticalAlignment="Center"
+                                                                      HorizontalAlignment="Center"
+                                                                      ContentSource="Header"
+                                                                      Margin="12,2,12,2"
+                                                                      RecognizesAccessKey="True"/>
                                                 </Border>
                                             </Grid>
                                             <ControlTemplate.Triggers>
@@ -108,6 +115,8 @@
 
                                                 <Trigger Property="IsSelected" Value="True">
                                                     <Setter Property="Panel.ZIndex" Value="100" />
+
+                                                   
 
                                                     <Setter TargetName="Border" Property="Background" Value="#e7e6e7" />
                                                     <Setter TargetName="Border" Property="BorderThickness" Value="1.5,1.5,1.5,0" />
@@ -123,15 +132,16 @@
                                             </ControlTemplate.Triggers>
                                         </ControlTemplate>
                                     </Setter.Value>
+                                    
                                 </Setter>
                             </Style>
                         </TabControl.Resources>
                         <TabItem Header="Ranked" BorderBrush="Transparent" Background="Transparent" >
-
-
-                            <Grid Background="Transparent" >
+                            
+                            <Grid Background="Transparent">
 
                                 <StackPanel Orientation="Horizontal" Margin="10">
+                                    
                                     <StackPanel>
                                         <TextBlock Text="Winrate" Foreground="LimeGreen" FontSize="15" FontWeight="Medium" Margin="100, 113, 5, 5"/>
                                     </StackPanel>
@@ -140,8 +150,8 @@
                                     </StackPanel>
                                 </StackPanel>
 
-                                <Grid Margin="200,-235,0,0" Height="25" Width="50" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <Button HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource MaterialDesignFlatButton}" Width="50" Click="Button_Click1">
+                                <Grid Margin="200,-100,0,0" Height="25" Width="50" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <Button HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource MaterialDesignFlatButton}" Width="50"  Click="Button_Click1">
                                         <materialDesign:PackIcon HorizontalAlignment="Center"  Kind="Search" Width="50" Height="20" />
                                     </Button>
                                 </Grid>
@@ -162,6 +172,7 @@
                                 </StackPanel>
 
                                 <StackPanel>
+                                    
 
                                     <Image Height="90" Source="{Binding Emblem}" Width="90" HorizontalAlignment="Right" Margin="0, 35, 160, 0" Stretch="Fill">
                                         <Image.Effect>
@@ -169,7 +180,7 @@
                                         </Image.Effect>
                                     </Image>
                                     <StackPanel Height="20" VerticalAlignment="Center">
-                                        <TextBlock Width="30" Text="{Binding Tier}" FontSize="14"  FontWeight="Medium" Margin="-200, 0, 0, 0"/>
+                                        <TextBlock Width="35" Text="{Binding Tier}" FontSize="14"  FontWeight="Medium" Margin="-200, 0, 0, 0"/>
                                         <TextBlock Width="80" Text="{Binding Rank}" FontSize="14" FontWeight="Medium" Margin="-80, -19, 0, 0"/>
                                     </StackPanel>
 

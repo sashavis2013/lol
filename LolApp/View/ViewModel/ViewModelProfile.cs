@@ -47,38 +47,44 @@ namespace LolApp.View.ViewModel
         public double totalGames { get; private set; }
         public string winrateText { get; private set; }
 
-        public ViewModelProfile(string summonerName, int icon, long level, string tier, string rank, int wins, int losses, int leaguePoints, List<MatchReferenceDto> matches, int matchIndex, int seasonId, int queueId, long gameId, List<ParticipantIdentityDto> participantIdentities, string gameVersion, string platformId, string gameMode, int mapId, string gameType, List<TeamStatsDto> teams, List<ParticipantDto> participants, long gameDuration, long gameCreation/*, PlayerDto player,int participantId*/)
-        {
-            SummonerName = summonerName;
-            Icon = "http://opgg-static.akamaized.net/images/profile_icons/profileIcon" + icon + ".jpg";
-            Level = level;
-            Tier = tier;
-            Rank = rank;
-            Wins = wins;
-            Losses = losses;
-            Matches = matches;
-            MatchIndex = matchIndex;
-            SeasonId = seasonId;
-            QueueId = queueId;
-            GameId = gameId;
-            ParticipantIdentities = participantIdentities;
-            GameVersion = gameVersion;
-            PlatformId = platformId;
-            GameMode = gameMode;
-            MapId = mapId;
-            GameType = gameType;
-            Teams = teams;
-            Participants = participants;
-            GameDuration = gameDuration;
-            GameCreation = gameCreation;
-            //Player = player;
-            //ParticipantId = participantId;
+        public long GameDurationMin { get; private set; }
 
-            LeaguePoints = leaguePoints;
-            Emblem = "/LoLApp;component/Assets/" + tier + ".png";
+        
+
+        
+
+        //public ViewModelProfile(string summonerName, int icon, long level, string tier, string rank, int wins, int losses, int leaguePoints, List<MatchReferenceDto> matches, int matchIndex, int seasonId, int queueId, long gameId, List<ParticipantIdentityDto> participantIdentities, string gameVersion, string platformId, string gameMode, int mapId, string gameType, List<TeamStatsDto> teams, List<ParticipantDto> participants, long gameDuration, long gameCreation/*, PlayerDto player,int participantId*/)
+        //{
+        //    SummonerName = summonerName;
+        //    Icon = "http://opgg-static.akamaized.net/images/profile_icons/profileIcon" + icon + ".jpg";
+        //    Level = level;
+        //    Tier = tier;
+        //    Rank = rank;
+        //    Wins = wins;
+        //    Losses = losses;
+        //    Matches = matches;
+        //    MatchIndex = matchIndex;
+        //    SeasonId = seasonId;
+        //    QueueId = queueId;
+        //    GameId = gameId;
+        //    ParticipantIdentities = participantIdentities;
+        //    GameVersion = gameVersion;
+        //    PlatformId = platformId;
+        //    GameMode = gameMode;
+        //    MapId = mapId;
+        //    GameType = gameType;
+        //    Teams = teams;
+        //    Participants = participants;
+        //    GameDuration = gameDuration;
+        //    GameCreation = gameCreation;
+        //    //Player = player;
+        //    //ParticipantId = participantId;
+
+        //    LeaguePoints = leaguePoints;
+        //    Emblem = "/LoLApp;component/Assets/" + tier + ".png";
 
 
-        }
+        //}
 
         public ViewModelProfile(string name, int profileIconId, long summonerLevel, string tier, string rank, int wins, int losses, int leaguePoints, int matchIndex, List<MatchReferenceDto> matches, long gameCreation, long gameDuration, long gameId, string gameMode, string gameType, string gameVersion, int mapId, List<ParticipantIdentityDto> participantIdentities, List<ParticipantDto> participants, string platformId, int queueId, int seasonId, List<TeamStatsDto> teams)
         {
@@ -105,17 +111,21 @@ namespace LolApp.View.ViewModel
             QueueId = queueId;
             SeasonId = seasonId;
             Teams = teams;
-
             
-
+           
+            GameDurationMin = gameDuration/60;
 
             totalGames = Wins + Losses;
             winrate = (Wins / totalGames);
+
+            
             //winrate = Wins / (Wins + Losses);
             
             //winrateText = $"{winrate} %";
             //winrateText = winrate.ToString("#.##\\%");
             winrateText = winrate.ToString("P");
+
+            
 
             Emblem = "/LoLApp;component/Assets/" + tier + ".png";
             Icon = "http://opgg-static.akamaized.net/images/profile_icons/profileIcon" + this.profileIconId + ".jpg";

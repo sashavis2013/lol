@@ -22,11 +22,11 @@ namespace LolApp.View
     public partial class Match : Grid
     {
         ControllerProfile controller;
-        public Match(Constants summoner)
+        public Match()
         {
             controller = new ControllerProfile();
             InitializeComponent();
-            this.DataContext = controller.GetContext(summoner);
+            
         }
         
         private void InitializeComponent()
